@@ -1,0 +1,94 @@
+# ============================================================
+#  .gitignore —— 告诉 Git「哪些文件不要纳入版本管理」
+#  规则：先写规则本身，以 # 开头的是注释（不会被 Git 读取）
+# ============================================================
+
+## ---------- 1. 操作系统自动生成的文件（不用管，也不该上传） ----------
+# Windows 缩略图缓存 / 桌面配置 / 隐藏属性文件
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+.DS_Store
+
+## ---------- 2. 编辑器 / IDE 的私人配置（每台电脑都不一样） ----------
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.iml
+*.swp
+*.swo
+*~
+
+## ---------- 3. Python 运行产生的垃圾文件 ----------
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+## ---------- 4. C / C++ 编译产物（本课程若用 Dev-C++/VS 会产生） ----------
+*.exe
+*.exe.stackdump
+*.out
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dll
+*.pdb
+*.ilk
+*.dSYM/
+Debug/
+Release/
+x64/
+*.layout
+*.dat
+
+## ---------- 5. Java / 其他语言临时产物 ----------
+*.class
+*.jar
+!.gradle/wrapper/gradle-wrapper.jar
+build/
+target/
+out/
+*.log
+
+## ---------- 6. 数据与临时文件 ----------
+*.tmp
+*.temp
+*.bak
+*.swp
+*.zip
+*.rar
+*.7z
+*.log
+# 大数据集 / 模型文件不要塞进仓库（GitHub 单文件超过 100MB 会被拒绝）
+*.csv
+*.xlsx
+!templates/*.xlsx
+*.png.tmp
+*.psd
+
+## ---------- 7. 千万不要上传的敏感信息 ----------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+!*.pub
+secrets.json
+config.local.*
+# 注意：id_rsa / id_ed25519 这类私钥文件绝对不可以提交
+
+## ---------- 8. 允许被提交的例外（！表示「反向规则」，即强制纳入） ----------
+!.gitkeep
+!templates/**
